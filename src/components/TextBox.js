@@ -23,6 +23,11 @@ export default function TextBox(props) {
     setText(event.target.value);
   };
 
+  const onClearClick = () => {
+    setText('');
+    props.setAlert('Cleared all text.')
+  };
+
   const wordsLength = (text) => {
     let words = text?.split(" ");
     if ((words ? words[0] : "") === "") {
@@ -62,6 +67,9 @@ export default function TextBox(props) {
         </button>
         <button className="btn btn-primary mx-4" onClick={onLowClick}>
           Convert to Lowercase
+        </button>
+        <button className="btn btn-primary mx-1" onClick={onClearClick}>
+          Clear all text
         </button>
       </div>
       <div
