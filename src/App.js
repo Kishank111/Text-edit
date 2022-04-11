@@ -3,8 +3,8 @@ import Navbar from "./components/Navbar";
 import TextBox from "./components/TextBox";
 import { useState } from "react";
 import Alert from "./components/Alert";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import About from "./components/About";
+// import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+// import About from "./components/About";
 
 function App() {
   const [mode, setMode] = useState("light");
@@ -30,23 +30,11 @@ function App() {
 
   const [alert, setAlert] = useState("");
   return (
-    <Router>
+    <>
       <Navbar modeEdited={modeEdit} mode={mode} />
-
-      <Routes>
-        <Route
-          exact
-          path="/"
-          element={
-            <>
-              <Alert alert={alert} />
-              <TextBox setAlert={showAlert} heading="Type Here" mode={mode} />
-            </>
-          }
-        ></Route>
-        <Route path="/about" element={<About mode = {mode}/>}></Route>
-      </Routes>
-    </Router>
+      <Alert alert={alert} />
+      <TextBox setAlert={showAlert} heading="Type Here" mode={mode} />
+    </>
   );
 }
 
