@@ -30,7 +30,7 @@ export default function TextBox(props) {
 
   const wordsLength = (text) => {
     let words = text?.split(" ").filter((data) => data !== '');
-    return words.length
+    return words?.length
     
   };
 
