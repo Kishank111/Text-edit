@@ -29,16 +29,9 @@ export default function TextBox(props) {
   };
 
   const wordsLength = (text) => {
-    let words = text?.split(" ");
-    if ((words ? words[0] : "") === "") {
-      return 0;
-    } else {
-      if (words[words?.length - 1] === "") {
-        return words?.length - 1;
-      } else {
-        return words?.length;
-      }
-    }
+    let words = text?.split(" ").filter((data) => data !== '');
+    return words.length
+    
   };
 
   const [text, setText] = useState();
